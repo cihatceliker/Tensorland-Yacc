@@ -1,0 +1,26 @@
+>> this is a comment
+>> this program will find 100 th fibonacci number
+>> every variable has § at the start. in my case, it's Alt+S
+§n = 1e2;
+§a = 0;
+§b = 1;
+§i = 1;
+
+>> random calculations
+§rn = -1.5;
+§s = 4;
+print(§rn ^ §s);
+print(§rn <= 2);
+
+
+>> there are no 'block' statements. everything must be inline
+§some_func { §c = §a + §b; }
+
+try {§result = 1 / 0} except {print("dividing by zero")}
+try {§result = 14 * 1} except {print("this shouldnt be called")}
+
+while (§i < §n) { §some_func(); §a = §b; §b = §c; §i = §i + 1; }
+
+print(§b);
+
+if (§b > 100000) {print("its a big number");}
