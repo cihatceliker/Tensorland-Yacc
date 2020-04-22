@@ -1,9 +1,10 @@
 tokens = (
     'ID', 'NUMBER', 'PRINT', 'COMMENT', 'TRUE', 'FALSE',
-    'STRING', 'WHILE', 'LTE', 'GTE', 'EE', 'IF', 'TRY', 'EXCEPT'
+    'STRING', 'WHILE', 'LTE', 'GTE', 'EE', 'IF', 'TRY', 'EXCEPT',
+    'OP_SCOPE', 'CL_SCOPE'
 )
 
-literals = ['=', '+', '-', '*', '/', '(', ')', '{', '}', '<', '>', ';', '^', '%']
+literals = ['=', '+', '-', '*', '/', '(', ')', '<', '>', ';', '^', '%']
 
 t_ID = r'§[a-zA-Z_][a-zA-Z0-9_]*'
 t_COMMENT = r'>>.*'
@@ -16,6 +17,9 @@ t_EE = r'=='
 t_IF = r'if'
 t_TRY = r'try'
 t_EXCEPT = r'except'
+t_OP_SCOPE = r'do'
+t_CL_SCOPE = r'stop'
+
 
 def t_TRUE(t):
     r'true'

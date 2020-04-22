@@ -47,7 +47,7 @@ def p_non_block_statement(p):
 
 def p_function(p):
     '''
-    function : ID '{' start '}'
+    function : ID OP_SCOPE start CL_SCOPE
     '''
     p[0] = Node(action='func_assign', params=[p[1], *p[3]])
 
@@ -100,20 +100,20 @@ def p_expression_group(p):
 
 def p_while_statement(p):
     '''
-    while_statement : WHILE expression '{' start '}'
+    while_statement : WHILE expression OP_SCOPE start CL_SCOPE
     '''
     p[0] = Node(action='loop', params=[p[2], *p[4]])
 
 def p_if_statement(p):
     '''
-    if_statement : IF expression '{' start '}'
+    if_statement : IF expression OP_SCOPE start CL_SCOPE
     '''
     p[0] = Node(action='if', params=[p[2], *p[4]])
 
 
 def p_try_statement(p):
     '''
-    try_statement : TRY '{' non_block_statement '}' EXCEPT '{' non_block_statement '}'
+    try_statement : TRY OP_SCOPE non_block_statement CL_SCOPE EXCEPT OP_SCOPE non_block_statement CL_SCOPE
     '''
     p[0] = Node(action='try', params=[p[3], p[7]])
 

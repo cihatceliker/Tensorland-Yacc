@@ -14,13 +14,13 @@ print(§rn <= 2);
 
 
 >> there are no 'block' statements. everything must be inline
-§some_func { §c = §a + §b; }
+§some_func do §c = §a + §b; stop
 
-try {§result = 1 / 0} except {print("dividing by zero")}
-try {§result = 14 * 1} except {print("this shouldnt be called")}
+try do §result = 1 / 0 stop except do print("dividing by zero") stop
+try do §result = 14 * 1 stop except do print("this shouldnt be called") stop
 
-while (§i < §n) { §some_func(); §a = §b; §b = §c; §i = §i + 1; }
+while (§i < §n) do §some_func(); §a = §b; §b = §c; §i = §i + 1; stop
 
 print(§b);
 
-if (§b > 100000) {print("its a big number");}
+if (§b > 100000) do print("its a big number"); stop
