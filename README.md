@@ -26,6 +26,11 @@ You can run the program with a statement by statement execution if you don't spe
 ```bash
 python yacc_file.py
 ```
+You can test the while loop in a statement by statement execution mode, using following:
+```
+§i = 0;
+while (§i < 10) do §i = §i + 1; print(§i); stop
+```
 Using this, you can see the output of the example program:
 ```bash
 python yacc_file.py < input.tn
